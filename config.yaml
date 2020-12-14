@@ -1,6 +1,6 @@
 baseurl: https://tedyh.netlify.app
 DefaultContentLanguage: en
-title: Beautiful Hugo
+title: Tedy Herlambang
 theme: beautifulhugo
 metaDataFormat: yaml
 pygmentsStyle: trac
@@ -12,8 +12,8 @@ Params:
   commit: no
   dateFormat: January 2, 2006
   delayDisqus: yes
-  favicon: img/favicon.ico
-  logo: img/avatar-icon.png
+  # favicon: img/favicon.ico
+  # logo: img/avatar-icon.png
   mainSections:
     - post
     - posts
@@ -21,7 +21,7 @@ Params:
   rss: yes
   showRelatedPosts: yes
   socialShare: yes
-  subtitle: Build a beautiful and simple website in minutes
+  # subtitle: Build a beautiful and simple website in minutes
   useHLJS: yes
   wordCount: yes
 Author:
@@ -79,15 +79,20 @@ menu:
     - name: Tags
       url: tags
       weight: 3
-markup:
-  goldmark:
-    renderer:
-      unsafe: yes
-  tableOfContents:
-    startLevel: 1
 ignoreFiles:
   - \.Rmd$
   - \.Rmarkdown$
   - _cache$
   - \.knit\.md$
   - \.utf8\.md$
+markup:
+  defaultMarkdownHandler: goldmark
+  goldmark:
+    renderer:
+      unsafe: true
+  highlight:
+    style: pygments
+    codeFences: false
+  tableOfContents:
+    startLevel: 2
+    endLevel: 3
